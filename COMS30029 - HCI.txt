@@ -44,3 +44,11 @@ What is Activity Theory?	It looks at an entire activity (driven by a motive)<sup
 What is the hierarchical structure of an activity?	<ol><li>Activity - driven by a motive</li><li>Actions - driven by goals</li><li>Operations - determined by the conditions</li></ol>
 What is internalisation and externalisation?	Internalisation: when actions transform into operations (like when you become an expert)<br>Externalisation: when operations transform into actions (like when there's a breakdown)
 What are the types of contradictions in activity theory?	Primary: Within a single component<br>Secondary: Between different components<br>Tertiary: Within different version of the same activity<br>Quaternary: Between different activity systems
+What are the two types of GOMS analysis?	"<span style=""text-decoration-line: initial;"">KLM-GOMS - simple, adds up individual actions<br></span>CPM-GOMS - complex, allows for parallel actions"
+What is disability studies?	A field of critical inquiry focused on the lived experience of disabled people, and the societal, medical and intellectual policies and rhetoric concerned with disability (Mankoff et al. 2010)
+What is the difference between person-first and identity-first language?	"Person-first - ""a person with a disability""<br>Identity-first - ""disabled person"""
+What is the medical model of disability?	<ul><li>Focuses on the physical and functional limitations a person may demonstrate</li><li>Disability is within the individual<br></li><li>Assistive technologies are fixes<br></li></ul>
+What is the social model of disability?	"<ul><li>Focuses on barriers imposed by social/cultural environment that
+contribute to disabling a person<br></li><li>Disability is located in the social environment<br></li><li>Tries to fix attitudes</li></ul>"
+What is the predicament model of disability?	It recognises disability as a complex situation, rather than solely a medical deficit or a social construct.
+What is the double empathy problem?	A theory suggesting that social communication difficulties between autistic and non-autistic people are mutual, not a one-sided deficit.
