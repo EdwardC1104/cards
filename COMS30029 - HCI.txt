@@ -26,3 +26,14 @@ How are affordances in virtual objects identified by people?	<ul><li>Convention<
 What is a perceptible affordance?	The&nbsp;interface&nbsp;element&nbsp;oﬀers&nbsp;information&nbsp;about&nbsp;how&nbsp;it may&nbsp;be&nbsp;acted&nbsp;upon
 What is a false affordance?	Conveying&nbsp;the&nbsp;impression&nbsp;that&nbsp;an&nbsp;interface&nbsp;element does&nbsp;something,&nbsp;but&nbsp;does&nbsp;something&nbsp;unexpected instead​
 What is a correct rejection of an affordance?	When there is no affordance and nothing indicating there might be.
+What did the third wave of HCI focus on?	<ul><li>Humanistic perspectives<br></li><li>The user's overall experience, including non-useful aspects like pleasure and play<br></li><li>Ethics and values<br></li><li>Social conscience</li></ul>
+What are the four parts of the Hook model?	<ul><li>Trigger -&nbsp;initiator to perform some behaviour</li><li>Action - get the user to respond with some action</li><li>Variable Reward - slightly different value reward each time, sometimes none</li><li>Investment - build loyalty by making the users feel the time they spent was useful</li></ul>
+What are practical qualities?	How usable, practical, functional, supportive, adaptable, useful something is
+What are hedonic qualities?	How pleasurable, fun, interesting, stimulating, exciting something is
+How can we quantify hedonic qualities?	Make users score along two axes - valence (good or bad) and arousal (high or low energy).
+What are flow states?	Positive experiences where you become completely absorbed in an activity that is intrinsically motivating and enjoyable<sup></sup><sup></sup><sup></sup><sup></sup>. You feel focused and in control, and will lose track of time<sup></sup>.
+How can you support flow states?	<ul><li>Balance between challenge and difficultly</li><li>Clear goals</li><li>Unambiguous feedback</li></ul>
+What does it mean if something is extrinsically good?	It is good for the sake of something else
+What does it mean if something is intrinsically good?	It is good for its own sake. It is&nbsp;integral to the thing.
+What are the basic needs in self-determination theory?	Autonomy -&nbsp;the need for connection to other people, or a sense of belonging<br>Competence -&nbsp;the need to feel ability and mastery over tasks<br>Relatedness -&nbsp;the need for things to be in line with your goals and values<br>If an activity satisfies the basic needs, it will be intrinsically motivating.
+How do you support the basic needs in self determination theory?	<ul><li>Avoid external pressure​</li><li>Avoid arbitrary rewards ​</li><li>Informational feedback to support sense of competence​</li><li>Support connection to others​</li><li>Help users connect it to their values</li></ul>
