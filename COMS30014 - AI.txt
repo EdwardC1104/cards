@@ -1,0 +1,18 @@
+#separator:tab
+#html:true
+#tags column:3
+What is the difference between strong and weak AI?	Strong AI -&nbsp;addressing abstract general-purpose problem solving<br>Weak AI -&nbsp;addressing concrete domain-specific task performance	
+What is the difference between knowledge-driven AI and data-driven AI?	Knowledge-driven AI - symbolic, declarative, white-box<br>Data-driven AI - connectionist, distributed black-box	
+Is&nbsp;movie(american_beauty,1999). a fact, rule, or query?	It is a fact.<br>Facts are in the form&nbsp;predicate(terms,…).	
+Is&nbsp;released_after(M,Y) :- movie(M,Z), Z&gt;Y. a fact, rule, or query?	It is a rule.<br>Rules use operators like:<br><ul><li>“:-” if&nbsp;</li><li>“ ,” and</li><li>“;” or</li><li>“\+” not</li></ul>	
+Is&nbsp;?- actor(_, A, _), director(_, A). a fact, rule, or query?	It is a query.	
+What is the swipl command for loading source code from multiple files?	?- [file1, file2].	
+What is the swipl command to&nbsp;detect and reload any modified definitions?	make.	
+How do you exit prolog?	halt.	
+What are the comparison operators for ground numbers?	&lt;, &gt;, =&lt;, &gt;=, ==, \==	
+What are the comparison operators for arbitrary terms?	@&lt;, @&gt;, @=&lt;, @&gt;=, ==, \==	
+What is an atom?	<ol><li>A string of characters starting with a lowercase</li><li>A string of characters between single-quotes</li><li>A string of special characters</li></ol>	
+What is a variable?	<ol><li>A string that starts with an uppercase letter</li><li>A string that starts with an underscore</li></ol>	
+What are complex terms?	A functor followed by a sequence of arguments.	
+What is arity?	The number of arguments a functor takes.	
+What are clauses?	Any statement that ends in a full-stop.	
