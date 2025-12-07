@@ -21,17 +21,17 @@ What is the Prolog implementation Breadth-First Search?&nbsp;	"<div><b>Search_bf
 <div><b>&nbsp; search_bf(NewAgenda,Goal).</b></div>"
 What are the Depth-First Attributes?	agenda = stack (LIFO)<br>incomplete: may get trapped in an infinte branch<br>no shortest-path property (returns first found)<br>requires O(BxN) memory
 What are the Breadth-First Attributes?	agenda = queue (first-in first-out)<br>complete: will find all solutions<br>firt solution found along shortest path<br>requires O(B^n) memory&nbsp;
-Iterative Deepening	Depth-First Search but limit depth at each stage<br>Combines optimality of BFS and Memory Benefits of DFS
+What is Iterative Deepening?&nbsp;	Depth-First Search but limit depth at each stage<br>Combines optimality of BFS and Memory Benefits of DFS
 How does Best-First Search interate?&nbsp;	When adding children into the adgenda you can order them via a heuristic metric. You append them to the back but pre-process them via some heuristic.<br><br>Agenda = priority queue<br>Behaviour depends on heurstic employed (optimality / speed etc.)
 What does A Search aim to minimise?	Aims to minimise the total cost of solution paths via some node n using a metric (aka f score) which combines cost of reaching current node with cost of moving to next node.&nbsp;<br><br>f(n) (cost along path through n)<br>g(n) (cost to reach current node n-1)<br>h(n) (cost to go from n-1 to n)<br><br>f(n) = g(n) + h(n)<br><br>if g(n) == 0 (for all n) then you have Greedy Best first<br>if h(n) == 0 (for all n) then you have BFS&nbsp;
 What is Global Optimism?&nbsp;	A heuristic is globally optimistic if the estimated cost of reaching a goal is always less than the actual cost (from any node n). i.e Eucledian Distance in GridWorld
-Simple Hill Climbing	"<div>Repeatedly switch to the first better solution found in the local</div>
+How does the Simple Hill Climbing work at a high level?&nbsp;	"<div>Repeatedly switch to the first better solution found in the local</div>
 <div>neighbourhood of the current solution</div><div><br></div><div>Deterministic&nbsp;</div><div><br></div><div>Pick first found better node</div>"
-Steepest Hill Climb&nbsp;	"<div>Repeatedly switch to the best solution found in the local</div>
+How does the Steepest Hill Climb algorithm work?&nbsp;	"<div>Repeatedly switch to the best solution found in the local</div>
 <div>neighbourhood of the current solution</div><div><br></div><div>Non-Stochastic</div>"
-<div>Simple Tabu Search</div>	"<div>Hillclimb, but don’t consider solutions on a (finite) list of</div>
-<div>previously visited solutions</div>"
-<div>Simulated Annealing</div>	"<div>Hillclimb, but tolerate moves to worse solutions with a probability</div>
+<div>How does Simple Tabu Search work at a high level?&nbsp;</div>	"<div>Same as Hillclimb, but don’t consider solutions on a (finite) list of</div>
+<div>previously visited solutions.&nbsp;</div><div>In addition, as it picks the&nbsp;<b>best</b>&nbsp;solution, it can also traverse downwards.&nbsp;</div>"
+<div>How does the Simulated Annealing algorithm work?</div>	"<div>Same as Hillclimb, but tolerate moves to worse solutions with a probability</div>
 <div>that is initially high, but decreases as more steps are made</div>"
 Explore/Exploit Tradeoff for BFS/DFS	<div>Breadth-first search explores, while depth-first exploits.</div>
 What is the difference between strong and weak AI?	Strong AI -&nbsp;addressing abstract general-purpose problem solving<br>Weak AI -&nbsp;addressing concrete domain-specific task performance
