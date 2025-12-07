@@ -49,3 +49,75 @@ What is a variable?	<ol><li>A string that starts with an uppercase letter</li><l
 What are complex terms?	A functor followed by a sequence of arguments.
 What is arity?	The number of arguments a functor takes.
 What are clauses?	Any statement that ends in a full-stop.
+What is the main difference between Metaheuristic Algorithms and Genetic Algorithms?&nbsp;	Metaheuristic work with only one hill climber, moving across the solution space. By contrast Genetic Algorithms maintain a <b>population&nbsp;</b>of solutions.&nbsp;
+What is the basic form of a Genetic Algorithm?	Assess, Breed, Mutate a population of solutions, Loop
+Population defenition in GA	<div>The set of individual solutions that the GA is acting on.</div>
+What is the defenition of an Individual in GA.	<div>A member of the population.</div>
+What is a Genotype in GA.	<div>A string of symbols from some alphabet that encodes a particular solution (sometimes: Genome or Chromosome).</div>
+What is a Phenotype in GA.	<div>The actual solution encoded by a genotype.</div>
+What is Gene?&nbsp;	<div>Chunks of genome, each taking a value: “Allele” i.e ATCG</div>
+What is&nbsp;<b>Fitness</b>&nbsp;in GA?	<div>The value or quality of an individual solution phenotype.</div>
+What is a&nbsp;<b>Fitness Function</b>&nbsp;in GA?	<div>A function which calculates and returns the fitness of a solution.</div>
+What is&nbsp;<b>Crossover</b>&nbsp;in GA?	<div>The recombination of alleles from multiple parents.</div>
+What is&nbsp;<b>Mutation&nbsp;</b>in GA?&nbsp;	<div>Replacing offspring alleles with random alternatives.</div>
+What is the&nbsp;<b>Fitness Landscape</b>&nbsp;in GA?&nbsp;	"<div>An ‘evolutionary search space’ organising all</div>
+<div>possible solutions according to the neighbourhood relationships</div>
+<div>that result from the GA’s Genotype Structure &amp; Genetic Operators,</div>
+<div>with landscape ‘altitude’ set by each solution’s Fitness.</div>"
+How are Parents chosen in GAs?	"<div>We can pick parents with a chance proportional to fitness:</div>
+<div>• where p<sub>i</sub>&nbsp;is the chance that we pick individual i</div>
+<div>• S is the sum of fitnesses in the current population: S is sum of fitness<sub>i</sub>&nbsp;/ Sum of fitness of population.</div>
+<div><br></div>"
+What is the Roulette Wheel Selection method for GAs?&nbsp;	"<div><img src=""Screenshot 2025-12-07 at 12.30.34.png""><br></div>"
+What is Rank-Proportionate Selection in GA?&nbsp;	You pick each parent with a change proportional to the rank of the fitness in the population.&nbsp;<br>Each individual has equal probability of being in a 'tournament', pick N.<br>Each 'tournament' produces one 'fittest' individual.&nbsp;<br>Run K 'tournaments'.&nbsp;
+What are the two genetic operators applied during reproduction?&nbsp;	Mutation: Each offspring allele is replaces by a random allele with prob m.<br>(Asexual + Sexual)&nbsp;<br>Almost always used (typically 1 mutation per offspring)<br><br><br>Crossover: The offspring genotype inherits genes from multiple parents.<br>(Sexual)<br>(Sometimes not used at all (Asexual Reproduction))
+What is Elitism?	The fittest current individual is copied into the next generation perfectly.&nbsp;
+What are the 3 types of Crossover?	"One-Point: The offspring inherits the first K genes from the mothers genotype and remainder from fathers.<br><img src=""Screenshot 2025-12-07 at 12.44.09.png"">"
+What is Two-Point Crossover in GA?&nbsp;	"The offspring inherits j through k genes from mother genotype and remainer from father.&nbsp;<br><img src=""Screenshot 2025-12-07 at 12.45.50.png"">"
+What is Uniform Crossover in GA?	"Each of the offsprings genes are inherited from their mother with prob 0.5 else from father.&nbsp;<br><img src=""Screenshot 2025-12-07 at 12.47.07.png"">"
+How does a Generational GA keep a constant population size N?&nbsp;	Continue selection and reproducing parents until we have N new offspring. Then discard old population and replace with N new individuals.&nbsp;
+How does Steady-State Reproduction keep population size N constant?&nbsp;	As soon as we have generated one new offspring, we pick a member of curr population and kill it.
+What are the three stopping Conditions in GA?&nbsp;	Found perfect solution - a genotype that achieves max fitness.&nbsp;<br>Run out of time.<br>We thing GA has converged and will not continue to improve.
+If a genotype if length L and each allele can be chosen from an alphabet of size A, how many distinct genotpyes are there?	A<sup>L</sup>
+How are genes neighbours?&nbsp;	They differ by a single mutation.&nbsp;
+What is a Needle-In-A-Haystack Landscape?&nbsp;	"If all genotypes bar one have the <b>same</b>&nbsp;low fitness. (Has no structure to exploit)<br><img src=""Screenshot 2025-12-07 at 13.09.20.png"">"
+What is a Random Landscape in GA?&nbsp;	"Suppose all genotypes had randomly assigned fitness.<br>Still very hard, as there is no structure.&nbsp;<br><img src=""Screenshot 2025-12-07 at 13.10.25.png"">"
+What is a 'good' landscape for GA to traverse?&nbsp;	"Smooth, High peaks are broad, making them hard to skip over.&nbsp;<br><img src=""Screenshot 2025-12-07 at 13.11.18.png"">"
+What are the 3 distinct types of Modality in Fitness Landscapes?&nbsp;	Unimodal: There is only one optimium (global) - Each gene has a best allele independent of all alleles at al other genes.<br><br>Bimodal: There are two optimums the best allele for some genes depends on the alleles at some other genes.&nbsp;<br><br>Multimodal: Many basins of attraction for many optima - lots of dependencies.
+What is a Deceptive Landscape?&nbsp;	"The best optima have small basins, consequently global optima is hard to find.<br><img src=""Screenshot 2025-12-07 at 14.20.25.png"">"
+Why are GAs more equipped for more challenging landscapes than regular search methods?&nbsp;	They maintain and evlove a <b>population</b> of solutions not just a single one like Hill-Climber.&nbsp;
+What is Evolutionary Drift?&nbsp;	A form of 'confusion' when trying to find an o[timal genotype. If multiple genotypes have equal fitness, evolution cannot choose between them (population can become split and never fully converge).
+What is the Quasi-Species Concept?	Hight GA mutation rates mean that the evolving population is a cloud of points on the landscape (a quasi-species).<br>If the selection pressure on the population to reward good solutions is overcome by mutation pressure then the population effectivley cannot 'see' the needle.
+What is Epistatis?&nbsp;	Epistasis is the interaction or dependency between different genes.<br>For instance if the fitness of one gene depends on another gene, you have epistatis. If every gene adds value independently (linear) there is zero episasis?&nbsp;
+What is modularity?&nbsp;	It is the 'inverse' of epistasis. Full modularity means each instance is independent of all other instances. No modularity means each instance is dependant of all other instances which means the solution has high epistasis.<br><br>TLDR: Modularity is inverse of Epistatis
+What is an Agent?&nbsp;	<div>An agent is a computer system that is capable of performing independent action on behalf of its users or owners.</div>
+What is a Multi-agent system?&nbsp;	"<div>A multiagent system is one that consists of a number of agents, who interact with one another.</div><div><br></div><div><div>For successful interaction, agents need to</div>
+<div>- coordinate,</div>
+<div>- negotiate</div>
+<div>- cooperate with each other</div></div>"
+What are the two key design problems in MAS?	Agent design (Micro)<br>Society Design (Macro)
+In a multi-agent system what are the two design principles to follow?&nbsp;	Micro: Agent design (i.e how each agent functions alone)<br>Macro: Society design (i.e how each agents function together)
+What does the Sense-Decide-Act-Loop allow for?&nbsp;	"Allows an agent to act autonomously in some environment in order to acheive a goal.&nbsp;&nbsp;<br><br><div>Engage in a close-coupled loop</div>
+<div>- Continually interact with the</div>
+<div>environment</div>
+<div>- sense – decide – act – sense – decide . .</div>"
+What are the three properties of an Intelligent Agent?&nbsp;	Reactivity<br>Proactivity<br>Social Ability
+What is Reactivity in MAS?	"<div>A reactive system is one that maintains an ongoing interaction with its environment and responds to changes that occur in the environment. (i.e automatic thermostat)</div><div><br></div>
+<div>Response needs to be in-time for it to be useful.</div>"
+What are the challenges with Reactivity?&nbsp;	"<div>- Reacting to environment may be easy</div>
+<div>- Lookup table: Stimulus → Response</div>
+<div>- Not the most effective behaviour</div>
+<div>- Can’t think of all possible scenarios!</div>"
+What is Proactivity in MAS?&nbsp;	"<div>Systematically working to achieve goal.</div><div><br></div>
+<div>Anticipate and take initiative.</div>"
+What is Social Ability in Agents?&nbsp;	"<div>Social ability in agents is the ability to interact with other agents (and humans) via a</div><div>communication language to:&nbsp;</div>
+<div>- Cooperate</div>
+<div>- Coordinate</div>
+<div>- Negotiate</div>"
+What are the 4 Properies of Environment?&nbsp;	Accessibiliy<br>Whether its static<br>Deterministic<br>Episodic
+Accessible vs Inaccessible Environments	"An accessible environment mean an Agent has or can obtain complete, accurate, and up-to-date information about the state of the<div>environment.</div>
+<div>More accessible an environment, simpler to build agents to act in that environment.</div>"
+Deterministic vs Non-Deterministic Environment	<div>Environment in which each action has a single guaranteed effect.</div><div>No uncertainty about the resulting state.</div>
+Episodic vs Non-Episodic Environments	<div>Environment in which an agent’s current action or performance does not affect its subsequent action or performance.</div>
+Static vs Dynamic Environments.	"<div>Static: Environment can be assumed to remain unchanged except by the performance of actions by the agent.</div><div><br></div><div><div>Dynamic: Other processes or agents also operate in the environment</div>
+<div>Physical world is dynamic.</div></div>"
