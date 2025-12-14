@@ -1,0 +1,165 @@
+#separator:tab
+#html:true
+What is the CIA triad?	Confidentiality, Integrity, Availability
+What does confidentiality mean as part of the CIA triad?	"<ul><li>private or confidential information is not made available or
+disclosed to unauthorized individuals<br></li><li>individuals control or influence what information related to them
+may be collected and stored and by whom and to whom that information may
+be disclosed<br></li></ul>"
+What does integrity mean as part of the CIA triad?	"<ul><li>information and programs are changed only in a specified and
+authorized manner<br></li><li>system performs its intended function in an unimpaired
+manner, free from deliberate or inadvertent unauthorised manipulation of the
+system<br></li></ul>"
+What does availability mean as part of the CIA triad?	"<ul><li>systems work promptly and service is not denied to authorised
+users<br></li></ul>"
+What is authenticity in security?	"Verifying that users
+are who they say they
+are and that each
+input arriving at the
+system came from a
+trusted source"
+What is accountability in security?	"The security goal that
+generates the
+requirement for
+actions of an entity to
+be traced uniquely to
+that entity"
+What are the key components of the OSI Security Architecture?	Security attack, security mechanism, security service
+What is a security attack in the OSI Security Architecture?	Any action that compromises the confidentiality, integrity, or availability of information owned by an organisation
+What is a security mechanism as part of the OSI Security Architecture?	A process or device designed to detect, prevent, or recover from security attacks.
+What is a security service as part of a OSI Security Architecture?	<div>A service that enhances security for data processing and communication within an organisation. It aims to counter security attacks and uses security mechanisms to achieve its objectives.</div>
+What is a passive attack?	A passive attack attempts to learn or make use of information from the system but does not affect system resources.
+What is an active attack?	"An active attack attempts to
+alter system resources or
+affect their operation."
+What is a masquerade attack?	"One entity
+pretends to be a different entity"
+What is a replay attack?	Involves the passive capture of a data unit and its subsequent retransmission to produce an unauthorised effect
+What is a modification of messages attack?	"Some portion of a legitimate
+message is altered, or messages
+are delayed or reordered to
+produce an unauthorised effect"
+What is a denial of service attack?	"Prevents or inhibits the normal
+use or management of
+communications facilities"
+What does AAA stand for?	Authentication, Authorisation, Accountability
+What are the three basic factors for authentication?	Something you know, something you have, something you are
+What is a digital signature?	"A data unit that allows a recipient to prove the source and integrity of the data and
+protect against forgery."
+What is traffic padding?	"The insertion of bits into gaps in a data
+stream to frustrate traffic analysis attempts."
+What is routing control?	"Enables selection of particular physically or
+logically secure routes for certain data."
+What is notarisation?	"The use of a trusted third party to assure certain
+properties of a data exchange."
+What is a Message Authentication Code (MAC) or Keyed Hash Function?	"Takes as input a secret key and a data block and produces
+a hash value (MAC) which is associated with the protected
+message. If the integrity of the message needs to be checked, the
+MAC function can be applied to the message and the
+result compared with the associated MAC value."
+What is the difference between cryptanalysis and brute-force attacks?	Cryptanalysis relies on knowledge of the algorithm
+What is the difference between a block and stream cipher?	A block cipher encrypts fixed-size blocks of plaintext at a time (e.g., 128-bit blocks in AES), whereas a stream cipher encrypts data one bit or byte at a time, often using a keystream generator (e.g., RC4).
+What is the difference between substitution and transposition in encryption?	Substitution replaces elements of the plaintext with different elements (e.g., replacing letters with other letters or symbols, like in the Caesar cipher), while transposition rearranges the order of the plaintext elements without changing them (e.g., swapping positions of letters, like in the Rail Fence cipher).
+Define information security	This term refers to preservation of confidentiality, integrity, and availability of information. In addition, other properties, such as authenticity, accountability, nonrepudiation, and reliability can also be involved.
+Define network security	"This term refers to protection of networks and their
+service from unauthorised modification, destruction, or
+disclosure, and provision of assurance that the network
+performs its critical functions correctly and there are no
+harmful side effects"
+What is circuit switching?	<div>Establishes a dedicated communication path (circuit) between sender and receiver before data transmission begins. All data follows this same path until the session ends.</div>
+What is packet switching?	<div>Data is divided into packets, and each packet may take a different route to the destination. No dedicated path; routers&nbsp; dynamically determine the best route for each packet.</div>
+What OSI Model layer operates on segments?	Transport layer
+What OSI Model layer operates on packets?	Network layer
+What OSI Model layer operates on frames?	Data Link layer
+What are the OSI Model layers?	Application<br>Presentation<br>Session<br>Transport<br>Network<br>Data Link<br>Physical
+What is a frame?	Frames are chunks of data created by network communication hardware. They contain frame delimiters, hardware addresses, source and destination MAC addresses, and the encapsulated data.
+What are packets?	"Packets are&nbsp;a stream of binary octets of data of some arbitrary
+length. They are created by software not hardware so contain logically addressing information like IP addresses."
+What are some application layer attacks?	Repudiation<br>Data Corruption
+What are some transport layer attacks?	Session Hijacking<br>Sync Flooding
+What are some network layer attacks?	Warm-hole<br>Black-hole<br>Gray-hole<br>Byzantine<br>Flooding<br>Resource consumption<br>Location disclosure<br>Sybil attack<br>Jelly-fish<br>Fabrication<br>Modification attack
+What are some data link layer attacks?	Traffic analysis<br>Monitoring<br>Disruption<br>WEP weakness<br>Selfish-node
+What are some physical layer attacks?	Jamming<br>Interception<br>Eavesdropping
+What are some multi-layer attacks?	Dos attacks<br>Impersonation<br>Replay<br>Man-in-the-middle
+What is DNS leaking?	Occurs when DNS queries bypass a secure connection (like a VPN) and are sent to an unintended DNS server, revealing browsing activity.
+What is DNS hijacking?	Attackers intercept or modify DNS queries to redirect users to malicious websites.&nbsp;Can be performed by malware, ISPs, or even rogue governments.
+What is DNS cache poisoning (spoofing)?	Attackers inject false DNS records into a resolver’s cache, making users resolve domains to malicious IPs.
+What is DNS amplification?	Attackers spoof a victim’s IP address and send small DNS requests to open DNS resolvers that respond with large DNS replies, overloading the victim’s network. Used in DDoS attacks.
+What is DoT?	DNS-over-TLS channels the original client requests through a secure TLS channel on port 853 instead of the common port 53 used for unencrypted DNS communication. This prevents attackers from seeing or manipulating information about the DNS request.
+What is DoH?	It encrypts messages between a client and DNS resolver but it uses&nbsp;the same port 443 used for HTTPS.
+What is BGP?	Border Gateway Protocol is the internet’s routing protocol that enables Autonomous Systems (AS) to exchange routing information, determining the best paths for data by advertising which routes they can reach.
+What is HTTP session hijacking?	HTTP session hijacking is an attack where an attacker steals a user's session token (e.g., via packet sniffing or cross-site scripting) to gain unauthorised access to their authenticated session on a website.
+What do all TCP communications contain?	Both a sequence and acknowledge number
+What is TCP session hijacking?	An attack where an attacker intercepts or takes control of an active TCP connection between two parties, allowing them to inject malicious data or disrupt the communication.
+What is a SYN flooding attack?	"An attacker sends a large number of SYN requests
+to a target's system to overwhelm the target. Usually they are from brand new IPs so its hard to distinguish legitimate users."
+How does the SYN cookie defence protect against SYN flooding?	It encodes&nbsp;the session state in the initial SYN-ACK cookie, allowing the server to avoid allocating resources until the handshake is completed.
+What is IP spoofing?	When you make up IP addresses to pretend to be other people.
+What is a man-in-the-middle attack?	If you’re browsing an insecure HTTP address, a hacker can use IP spoofing to pretend they’re both you and the website or online service you’re speaking to, thereby fooling both parties and gaining access to your communications.
+What does an ARP table do?	The&nbsp;Address Resolution Protocol table maps IPs to MAC addresses&nbsp;by broadcasting requests and caching responses.
+What is ARP spoofing?	ARP has no authentication so rogue machines can just lie. Many implementations will even just accept responses they didn't ask for.
+What is jamming?	When someone broadcasts so much random noise that regular communications can't get through.
+What is SQL injection?	An attacker can use SQL Injection to manipulate an SQL query via the input data from the client to the application, thus forcing the SQL server to execute an unintended operation constructed using untrusted input.
+What is cross-site scripting XSS?	An attack where malicious scripts are injected into a vulnerable website and executed in users' browsers when the site displays unsanitised input. It can steal sensitive data (like cookies or login tokens), hijack sessions, or deface websites by running attacker-controlled code in victims' browsers.
+What is a firewall?	"A device that filters all traffic between a protected or ""inside"" network and a less trustworthy or ""outside"" network."
+What is service control in firewall enforcement policy?	Determines the types of Internet services that can be accessed.
+What is direction control in firewall enforcement policy?	Determines the direction in which particular service requests are allowed.
+What is user control in firewall enforcement policy?	Controls access to a service according to which user is attempting to access it. IP based filtering or authentication with IPSec.
+Where does a packet filtering firewall work?	Network layer
+Where does a circuit-level gateway work?	Session layer
+How does a packet filtering gateway work?	Controls access based on packet addresses or protocol type. It is stateless.
+How does an application-level gateway firewall work?	An application-level gateway (or proxy) firewall works by acting as an intermediary between clients and servers, inspecting and filtering traffic at the application layer to ensure only authorised requests and responses are allowed. It provides high security by deeply analysing application-specific protocols but adds latency due to the extra processing overhead.
+How does a stateful inspection firewall work?	A&nbsp;stateful inspection firewall&nbsp;monitors and tracks the state of active connections, analysing packets in the context of previous traffic to detect and block malicious activity (like fragmented attacks). Unlike basic packet filters, it maintains a state table to make smarter decisions, improving security while still allowing legitimate traffic.
+What do circuit-level gateway firewalls do?	It operates at the session layer, monitoring TCP handshakes and session establishment to determine if a connection is legitimate - without inspecting actual application data. It doesn’t analyse packet content but verifies sessions, making it faster while still providing a security barrier between trusted internal users and external networks.
+What are intrusion detection systems?	A separate device that monitors activity to find suspicious events. Some are signature-based and some are heuristic based.
+What are the three main responses to an IDS alarm?	Increase monitoring<br>Act to protect<br>Call a human
+What makes up an Intrusion Prevention System?	IPS = IDS (Intrusion Detection System) + Firewall
+What are the layers of the TCP/IP (Internet) stack?	Application<br>Host-to-host transport<br>Internet<br>Network Access
+When is asymmetric encryption most often used?	During the establishment of a connection as it allows for mutual authentication and exchange of symmetric encryption keys
+What is the difference between SSL and TLS?	SSL was depreciated in 2015<br>TLS uses HMAC construction instead of worse MAC algorithms<br>TLS's key exchange mechanism is not proprietary
+What does the TLS alert protocol do?	Alarms transmission through the TLS record protocol
+What does the TLS change cipher-spec protocol do?	Moves to a new security context by the sender
+What does the TLS application data protocol do?	Directs data communication to the TLS record protocol layer
+What does the TLS handshake protocol do?	Authentication and security parameters establishment
+What happens in the initialisation phase of IPsec?	Entities authenticate each other<br>They negotiate security services and mechanisms<br>Establish a secret key<br>This is implemented by the Internet Key Exchange
+What happens in the data protection phase of IPsec?	Data is confidential and integrity/authentication is maintained<br>Symmetric encryption is used&nbsp;<br>A protected tunnel can be made<br>This is implemented by the Authentication Header (AH) or Encapsulating Security Payload (ESP)
+What does the Authentication Header protocol do in IPsec?	Maintains integrity and authentication of data origin<br>Optional replay detection<br>Transport Mode: Authenticates the entire original IP packet, including the header and payload, but does not encrypt it.<br>Tunnel Mode: Authenticates the entire original IP packet and encapsulates it within a new IP packet with a new header, without encryption.
+What does the Encapsulating Security Payload protocol do in IPsec?	Optionally maintain data confidentiality<br>Maintains integrity, authentication of data origin<br>Optional replay detection<br>Transport Mode: Encrypts and/or authenticates only the payload of the IP packet, leaving the original IP header intact.<br>Tunnel Mode: Encrypts and/or authenticates the entire original IP packet (header and payload), then encapsulates it within a new IP packet with a new header.
+What is the difference between transport and tunnel IPsec modes?	Transport mode only encapsulates the payload of the original packet.&nbsp;<br>Tunnel mode encapsulates the entirety of the original packet.
+What are security associations?	A contract between entities that includes a set of security parameters enabling entities to establish security services for traffic protection.<br>Contains AH or ESP, tunnel or transport, keys, lifetime.
+What protocol does the key and security association management for security associations?	Internet Key Exchange (IKE)
+What does the L2TP protocol do?	Allows tunnelling between a nomad and a private network. It is not secured.<br>Combining it with IPsec allows nomad clients to access internal resources like they were inside the internal network.
+What is the difference between a client&nbsp;IPsec/TLS VPN and clientless TLS VPN?	A client IPsec/TLS VPN requires installing a dedicated VPN client on the user's device, allowing full access to private network resources. A clientless TLS VPN does not require any client software, offering secure access primarily to web-based applications via a browser, but with more limited functionality.
+What is a spatial safety violation?	When a pointer accesses memory outside an allocated object's bounds. It refers to incorrect memory locations.
+What is a temporal safety violation?	When a pointer accesses or deallocates memory after the object has been freed. It occurs at an invalid execution instance.
+What can memory corruption bugs lead to?	Arbitrary read/write, control flow hijack, or corruption. Exploitable in memory-unsafe languages like C.
+Why is C considered dangerous for memory safety?	No type safety; pointers allow arbitrary memory access. Programmers may ignore warnings, leading to errors.
+What causes a buffer overflow?	Writing more data to a buffer than its allocated size. Can corrupt memory or crash the program.
+What happens if a BoF overwrites the return address?	The program may execute attacker-controlled code. Predictable stack layouts aid exploitation.
+Name two BoF countermeasures.	Stack canaries (check for tampering) and shadow stacks (store return addresses separately).
+How do format string errors occur?	User-controlled format strings exploit functions like&nbsp;printf. Extra arguments or&nbsp;%n&nbsp;can write to memory.
+What can format string exploits achieve?	Data corruption (overwrite variables) or control flow hijack (modify return addresses).
+Why are functions like&nbsp;strcpy&nbsp;or&nbsp;gets&nbsp;unsafe?	They lack bounds checking, enabling buffer overflows. Safer alternatives:&nbsp;strncpy,&nbsp;fgets.
+"What is a ""stack canary""?"	A random value placed before the return address. Detects overflows by checking for corruption.
+What is ASLR (Address Space Layout Randomization)?	Randomises memory addresses to make exploits harder. Prevents predictable stack/heap layouts.
+"What is a ""shadow stack""?"	A secondary stack storing return addresses. Validates consistency to prevent control-flow hijacking.
+What does an operating system do?	Abstracts and multiplexes hardware resources to allow multiple programs to share them.
+What are the two modes every processor has? And what do the modes determine at a minimum?	User space and kernel mode.<br>Determines which instructions can be used, which addresses are translated, and which memory locations can be accessed.
+How do Intel CPUs manage privilege levels?	Four rings<br>0 = kernel<br>1+2 = drivers, VMs etc<br>3 = normal processes<br><br>Memory segments have privileged levels and maintain a CPL (current privileged level)
+How do MIPS CPUs manage privilege levels?	Just user mode and kernel mode
+What are the three ways to change the CPU protection level?	System calls, traps, interrupts
+What are system calls?	A way for programs to request stuff from the operating system
+What are traps?	Unintentional requests for the operating system to recover from an exception that has been raised.
+What are interrupts?	Interrupts are signals, sent by hardware or software, that demand quick attention from the OS. They are handled independently of an user program.
+What is the benefit of OS abstractions?	They provide an interface that separates policy - what the interface commits to accomplish - from the mechanism - how the interface is implemented.
+Name three common OS abstractions	Threads, address space, files
+What is the difference between processes and threads?	Processes are separate programs with own memory; threads are lighter, share memory within a process. Threads faster to switch, processes more isolated but heavier.
+What is virtual memory?	It is isolated memory provided by the kernel. Holds code, data, stacks. Impossible to address other processes virtual memory.
+What is the Memory-Mapping Unit?	The MMU is a piece of hardware that translates virtual addresses (processes use) to physical addresses (CPUs use).
+How did base and bound MMUs translate addresses?	Adding the base for the process to the virtual address to get the physical address, ensuring it stays within the bounds.
+How do segmentation MMUs translate addresses?	Each logical unit (stack, heap, ...) has its own base and bound to prevent unused gaps within segments. Translation is done by adding the segment's base address to the virtual address's offset from its segment.&nbsp;
+How do paging MMUs translate addresses?	Paging divides memory into fixed-size blocks. Virtual addresses are split into a virtual page number (VPN) and an offset. MMU maps VPNs to physical page frams (PPNs). This is more efficient than segmentation.&nbsp;
+What are page faults?	They occur when pages are in swap memory instead of main memory. An exception occurs that will make the kernel move the page into memory.
+How does the FIFO page replacement policy work?	Remove the page that has been in memory longest.
+How does the MIN page replacement policy work?	Replace the page that will not be referenced for the longest
+How does the LRU page replacement policy work?	Remove the page that has been used the least recently
+How does the Clock page replacement policy work?	"The&nbsp;Clock algorithm&nbsp;approximates LRU by organizing pages in a circular list with a ""use bit."" A ""clock hand"" sweeps through pages, evicting the first one with a&nbsp;cleared (0) use bit; if a page's bit is&nbsp;set (1), it's cleared and spared. This balances fairness and efficiency without full LRU overhead.<br>tldr: pages with use bit = 1 get a second chance"

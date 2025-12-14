@@ -1,0 +1,43 @@
+#separator:tab
+#html:true
+What does promiscuous mode mean?	Enables capture of all wireless traffic on the network segment instead of just communication to/from that device.
+How do you force the generation of Domain Name requests?	nslookup <domain></domain>
+Why are there some HTTP frames under the protocol heading after applying the TCP filter?	HTTP is an application-level protocol that usually runs on top of TCP
+How would you exclude HTTP frames from a TCP filter?	tcp and not http
+How do you filter by source, destination, and time-to-live?	ip.src == “0.0.0.0”, ip.dst == “0.0.0.0”, ip.ttl = 0
+When setting up a simple network with a router and multiple PCs in Packet Tracer, what key network parameters must be configured on each PC and on the router's interfaces to allow them to communicate?	IP Address, Subnet Mask, and Default Gateway on each PC and IP Address and Subnet Mask for the network segment on the router.
+How do you verify basic connectivity between devices in Packet Tracer using the Command Prompt utility on a PC?	"ping <ip address=""""></ip>"
+In the IoT House simulation, what is one method an attacker could use to gain access to the wired network from outside the house?	If a device like a WAP is mounted to the outside of the house, then it could be removed and its ethernet connection to the switch could be exploited.
+What is a MAC address, and why are they typically considered unique?	They are 12 hex characters (48 bits) that are assigned by the manufacturer to each Network Interface Controller for unique identification.
+How might an attacker discover a valid MAC address of a device on a wireless network?	Sniffing wireless connection in the air using a tool like Wireshark.
+What tool is often used for a port scan?	Nmap
+Why is PostgreSQL required for Metasploit Framework (MSF)?	PostgreSQL stores exploit data, sessions, and scan results.
+What is the primary advantage of using Armitage over the msfconsole CLI for penetration testing?	Armitage provides a visual interface for host discovery, vulnerability scanning, and exploit management.
+What would happen if LHOST was misconfigured?	The shell would fail because the target (RHOST) couldn’t connect back to the attacker’s machine.
+What vulnerability does the exploit/unix/irc/unreal_ircd_3281_backdoor module target, and what action does it allow an attacker to perform?	It exploits a hidden backdoor in UnrealIRCD 3.2.8.1, allowing unauthorized command execution on the target system.
+How does the exploit/unix/ftp/vsftpd_234_backdoor module compromise the target?	It triggers a malicious backdoor in vsftpd 2.3.4 by sending a crafted username during FTP login, granting immediate root access.
+Why is a reverse shell payload (cmd/unix/reverse) commonly used with the UnrealIRCD exploit, while cmd/unix/interact is default for vsftpd?	The UnrealIRCD exploit requires a reverse shell to bypass network restrictions (target connects back to attacker), whereas vsftpd’s backdoor opens a direct interactive shell.
+"What does the GDB command ""x/8xb $rbp-0x4"" display, and what does $rbp mean?"	It displays 8 bytes of memory starting at the address $rbp-0x4 (4 bytes below the base pointer). $rbp (Base Pointer) marks the start of the current stack frame.
+Compare the system call conventions for 32-bit and 64-bit Linux. How are parameters passed differently?	For 32-bit, the system call is activated with “int 0x80” and parameters are passed in as eax (syscall number), ebx, ecx, edx, etc. For 62-bit, the system call is activated with “syscall” and parameters are passed in rax (syscall number), rdi, rsi, rdx, etc.
+After attaching GDB to the running process, how would you locate the frame address of main in the GDB window?	"Read “info frame” assuming
+main is the current frame (selected with breakpoints or the “frame &lt;n&gt;” command)"
+What does “objdump -d <program>” reveal about the parameter passing mechanism before a function call in x86-64 assembly?	Parameters are passed in registers (rdi, rsi, rdx for 1st, 2nd, 3rd args in 64-bit) before the call instruction.
+What is the relationship between rbp and rsp during a function call, and which register typically points to the top of the stack?	rbp marks base of current stack frame, rsp points to top. rsp changes as stack grows/shrinks.
+In the execve system call, what are the roles of the registers rdi, rsi, and rdx in 64-bit Linux?	rdi = filename, rsi = args array, rdx = env array.
+What is the difference between the GDB commands b *main and b *main+60 when setting breakpoints, and how does the c command interact with these breakpoints?	b *main breaks at function start, b *main+60 breaks 60 bytes into it. c resumes execution until hitting a breakpoint
+In GDB, how would you use the ni and si commands to debug a function call after hitting a breakpoint at *main?	si steps into functions, ni steps over them (a whole call instruction would be executed at once instead of going inside it).
+What type of user input reveals stack values in hex format?	Strings like %x-%x-%x when the unsanitised input is then put directly into a prinf statement.
+In the buffer overflow task, why does the binary crash with a segmentation fault when a long string of 'A's is passed as an argument?	Because strcpy overflows the buffer and overwrites the return address on the stack, eventually causing the program to jump to an invalid memory location.
+Why do you have to reverse the admin program memory address?	It assumes a little-endian memory layout.
+What does the GDB command “break kmain” do in the context of OS/161, and why is it useful during kernel debugging?	It sets a breakpoint at the kmain function, which is the entry point for the OS/161 kernel.
+Describe the role of the copyin and copyout functions in OS/161. How do they differ from standard memory-copy operations like memmove?	They safely copy data between user and kernel space, enforcing memory protection. Unlike memmove, they validate addresses to prevent crashes or security violations.
+If you use finish in GDB during the boot() function, where will execution stop, and why is this useful?	It stops after boot() returns, just before menu() is called.
+What option in ps allows you to view all running processes on the system?	ps -e
+How would you sort these processes by CPU usage in descending order?	ps -e --sort=-%cpu
+What command would you use to display the running time of a process?	"ps -p <process pid=""""> -o etime</process>"
+What does the pmap command do?	It displays the memory map of a process, showing how memory is allocated across different segments (e.g., stack, heap, shared libraries).
+What does “watch -n 1 'ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head'” display?	Monitors top memory-consuming processes, refreshing every 1 second.
+"What
+are the top level directories in the OS/161 source and what do they contain?"	common/: mostly standard C library functions<br> design/: contains design documents<br> kern/: the kernel source code (where most of the lab takes place)<br> man/: the OS/161 man pages<br> mk/: fragments of Makefiles used to build the system<br> userland/: user space libraries and program code
+In the hello64.S program, what is the purpose of the following lines, and what do the values 1 and 60 in rax represent?<br> mov rax, 1&nbsp; <br> syscall&nbsp; <br> mov rax, 60&nbsp; <br> syscall&nbsp;	"“mov
+rax, 1” sets up the write syscall and “mov rax, 60” sets up the exit syscall."

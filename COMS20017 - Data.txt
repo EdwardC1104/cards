@@ -1,0 +1,187 @@
+#separator:tab
+#html:true
+What are features?	"Intrinsic traits, properties, or characteristics
+that tell one data/pattern/object apart from another"
+How do you determine if an email is spam?	1. Select a subset of words \( w_i \) and compute probabilities from training data:&nbsp; <br>&nbsp;&nbsp; \( P(w_i \mid \text{spam}) \) and \( P(w_i \mid \neg\text{spam}) \).&nbsp; <br><br>2. For an email containing words \( w_1, w_2, \dots, w_n \), assume:&nbsp; <br>&nbsp;&nbsp; \[P(\text{email} \mid \text{spam}) = P(w_1 \mid \text{spam}) P(w_2 \mid \text{spam}) \dots P(w_n \mid \text{spam})\]&nbsp; <br>&nbsp;&nbsp; \[P(\text{email} \mid \neg\text{spam}) = P(w_1 \mid \neg\text{spam}) P(w_2 \mid \neg\text{spam}) \dots P(w_n \mid \neg\text{spam})\]&nbsp; <br><br>3. The email is classified as spam if:&nbsp; <br>&nbsp;&nbsp; \[P(\text{email} \mid \text{spam}) &gt; P(\text{email} \mid \neg\text{spam})\]&nbsp;
+How do analogue to digital converters work?	They sample and then quantise
+What is the Nyquist-Shannon sampling theory?	An analogue signal containing components up to some maximum frequency u (Hz) may be completely reconstructed by regularly spread samples, provided the sampling rate is at least 2u samples per second
+What is the effect of sparser visual sampling?	Aliasing
+How is anti-aliasing achieved?	By filtering to remove frequencies above the Nyquist limit
+What properties does a valid distance,&nbsp;\(D(a,b)\),&nbsp;measure have?	Non-negative:&nbsp;\(D(a,b) \geq 0\)<br>Symmetric:&nbsp;\(D(a,b) = D(b,a)\)<br>Reflexive:&nbsp;\(D(a,b) = 0 \Leftarrow\Rightarrow a = b\)<br>Satisfies Triangular Inequality:&nbsp;\(D(a,b) \leq D(a,c) + D(c,b)\)
+What is the distance between numerical data points&nbsp;\( \mathbf{x} = (x_1, x_2, \dots, x_n) \)&nbsp;and&nbsp;\( \mathbf{y} = (y_1, y_2, \dots, y_n) \)&nbsp;in Euclidean space \( \mathbb{R}^n \), using the Minkowski Distance of order \( p \) (p-norm distance)?	The Minkowski distance of order \( p \) (p-norm distance) between \( \mathbf{x} \) and \( \mathbf{y} \) is given by:&nbsp;<br>\[ d_p(\mathbf{x}, \mathbf{y}) = \left( \sum_{i=1}^{n} |x_i - y_i|^p \right)^{\frac{1}{p}} \]<br>
+Manhattan distance is equivalent to&nbsp;Minkowski Distance of what order?	p = 1
+Euclidean distance is equivalent to&nbsp;Minkowski Distance of what order?	p = 2
+Chebyshev distance is equivalent to&nbsp;Minkowski Distance of what order?	p =&nbsp;∞
+How do you find Chebyshev distance between numerical data points \( \mathbf{x} = (x_1, x_2, \dots, x_n) \) and \( \mathbf{y} = (y_1, y_2, \dots, y_n) \)?	\[ D_{\infty}(\mathbf{x}, \mathbf{y}) = \lim_{p \to \infty} \left( \sum_{i=1}^{n} |x_i - y_i|^p \right)^{\frac{1}{p}} = \max \left( |x_1 - y_1|, |x_2 - y_2|, \dots, |x_n - y_n| \right) \]
+What is time series data?	When&nbsp;successive measurements made over a time interval
+What are the drawbacks of using a p-norm distance?	Can only compare time series of the same length.<br>Are very sensitive to signal transformations.
+What is Dynamic Time Warping (DTW) used for?	It used to measure the similarity between two numerical time series by allowing flexible alignment. Unlike Euclidean distance, which compares points one-to-one, DTW permits many-to-one mapping, making it more robust.
+How is Dynamic Time Warping (DTW) defined recursively?	"\(DTW(\mathbf{X}, \mathbf{Y}) = D(x_1, y_1) + \min \left\{
+DTW(\mathbf{X}, \text{REST}(\mathbf{Y})),
+DTW(\text{REST}(\mathbf{X}), \mathbf{Y}), 
+DTW(\text{REST}(\mathbf{X}), \text{REST}(\mathbf{Y})) 
+\right\}\)"
+What is syntactic distance?	Measures the distance between two sets of symbols - e.g. hamming or edit distance
+What is Hamming distance?	The number of substitutions required to change one string into another of the same length
+What is edit distance?	The number of insertions, substitutions, or deletions to transform one string into another of any length
+How are cosine similarity and cosine distance found?	\[\text{Similarity}(A, B) = \cos \theta = \frac{A \cdot B}{\|A\| \|B\|}\]<br>\[\text{Distance}(A, B) = 1 - \text{Similarity}(A, B)\]
+How do you calculate the mean vector?	\[\mu = \frac{1}{N} \sum_{i=1}^{N} \mathbf{v}_i\]<br>
+How do you calculate a sample's variance?	\[s^2 = \frac{1}{N-1} \sum_{i=1}^{N} (x_i - \bar{x})^2\]<br>However, if&nbsp;\(\bar{x}\)&nbsp;is the population mean, then use&nbsp;\(N\)&nbsp;instead of&nbsp;\(N - 1\).
+How do you calculate the covariance between two samples?	\[\mathrm{Cov}(x, y) = \frac{1}{N - 1} \sum_{i=1}^{N} (x_i - \bar{x})(y_i - \bar{y})\]<br>
+How do you calculate the covariance matrix between several samples?	"\[\mathbf{C} = \frac{1}{N - 1} \sum_{i=1}^{N} (\mathbf{v}_i - \boldsymbol{\mu})(\mathbf{v}_i - \boldsymbol{\mu})^\top\]or<br>\[\mathbf{C} = \frac{1}{N} \sum_{i=1}^{N}
+\begin{bmatrix}
+(v_{i1} - \mu_1)^2 &amp; (v_{i1} - \mu_1)(v_{i2} - \mu_2) \\
+(v_{i1} - \mu_1)(v_{i2} - \mu_2) &amp; (v_{i2} - \mu_2)^2
+\end{bmatrix}\]<br>"
+What do the diagonal values on a covariance matrix represent?	The variance of that dimension
+"What would data with a covariance matrix like&nbsp;\(\begin{bmatrix}
++ &amp; 0 \\
+0 &amp; +
+\end{bmatrix}\)&nbsp;look like?"	"<img src=""paste-1ed7a26224ae4335b6f71c5f64a7e58f5e8566d6.jpg"">"
+"What would data with a covariance matrix like&nbsp;\(\begin{bmatrix}
++ &amp; + \\
++ &amp; +
+\end{bmatrix}\)&nbsp;look like?"	"<img src=""paste-5c3f0be1285f88af64f21ecf005d1630f1f6cb12.jpg"">"
+"What would data with a covariance matrix like&nbsp;\(\begin{bmatrix}
+0 &amp; 0 \\
+0 &amp; +
+\end{bmatrix}\)&nbsp;look like?"	"<img src=""paste-f225887c36a1d32b0b90e0230363ac58703b06fa.jpg"">"
+"What would data with a covariance matrix like&nbsp;\(\begin{bmatrix}
++ &amp; - \\
+- &amp; +
+\end{bmatrix}\)&nbsp;look like?"	"<img src=""paste-745231c1ddbcb3fccb32b60aa5a91d367686cf95.jpg"">"
+"What would data with a covariance matrix like&nbsp;\(\begin{bmatrix}
++ &amp; 0 \\
+0 &amp; 0
+\end{bmatrix}\)&nbsp;look like?"	"<img src=""paste-f5460556bee9327dd4affe3f93ef4821bdb94ea4.jpg"">"
+What do the eigenvectors and eigenvalues tell us about a covariance matrix?	Each eigenvector points in a direction of maximum variance in the data.&nbsp;These are the principal directions or principal components. Each eigenvalue tells you how much variance is along the direction of its eigenvector.
+For a normal distribution,&nbsp;\(\mathcal{N}(\mu, \sigma^2)\), what is the probability density function?	\[p(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left( -\frac{(x - \mu)^2}{2\sigma^2} \right)\]<br>
+What is a probability density function?	A PDF&nbsp;describes the relative likelihood of a continuous random variable taking on a specific value. The area under the curve between two points gives the probability that the variable lies within that range.
+How do you calculate the&nbsp;Multivariate Normal Distribution PDF for&nbsp;\(\mathcal{N}(\boldsymbol{\mu}, \boldsymbol{\Sigma})\).	\[p(\mathbf{x}) = \frac{1}{\sqrt{(2\pi)^d |\boldsymbol{\Sigma}|}} \exp\left( -\frac{1}{2} (\mathbf{x} - \boldsymbol{\mu})^\top \boldsymbol{\Sigma}^{-1} (\mathbf{x} - \boldsymbol{\mu}) \right)\]<br>where&nbsp;\(\Sigma\)&nbsp;is the covariance matrix<br>
+How do you rescale a dataset between 0 and 1?	\[x' = \frac{x - \min(x)}{\max(x) - \min(x)}\]<br>
+How do you standardise a dataset so it has zero mean and unit variance?	\[x' = \frac{x - \mu}{\sigma}\]<br>
+How do you scale a vector to unit length?	\[x' = \frac{x}{\|x\|}\]<br>
+What is Mahalanobis distance?	It is a measure of the distance between a data point (vector) and a distribution (set of data). It takes into account the correlation of the data and is useful when the data dimensions are not independent.
+What is the formula for Mahalanobis distance?	\[\text{Mahalanobis}(a, b) = \sqrt{(a - b)^T \Sigma^{-1} (a - b)}\]Where:&nbsp; <br>- \( a \) and \( b \) are data vectors in the same dataset.<br>- \( \Sigma \) is the covariance matrix of the dataset.<br>- \( \Sigma^{-1} \) is the inverse of the covariance matrix.<br>- \( T \) represents the transpose of the vector.<br>
+How does probability theory model uncertainty?	It&nbsp;specifies the chance of observing certain signals.&nbsp;Alternatively, one can view probability as specifying the degree to which we believe a signal reflects the true state of nature.
+What is a statistic?	A function of some observed data that does not depend on unknown parameters
+What is detection theory?	It answers the questions of which probability model best explains the signal.
+What is estimation theory?	It finds the best parameter settings, for a model with free parameters, that describes the signal we have observed.
+What is the Symmetric Alpha-Stable (SαS) model?	"The Symmetric Alpha-Stable (SαS) model is a distribution that generalises Gaussian and Cauchy distributions, allowing for flexible tail behaviour. The parameter α controls the ""thickness"" of the distribution tails."
+What is the Characteristic Function of the SαS Model?	\[\phi(\omega) = e^{-\gamma |\omega|^\alpha}\]<br>Where:<br>- \( \omega \) is the frequency variable.<br>- \( \gamma \) is the dispersion parameter.<br>- \( \alpha \) is the characteristic exponent (with \( 0 &lt; \alpha \leq 2 \)).<br>
+What is the Relationship Between \( \gamma \) and Variance in the SαS Model?	For the Gaussian distribution (\( \alpha = 2 \)), the variance is \( 2 \times \gamma \).<br>For the Cauchy distribution (\( \alpha = 1 \)), \( \gamma \) behaves like the variance, but the Cauchy distribution has undefined variance.
+What are the steps for image denoising?	Transform noisy image into wavelets<br>Perform coefficient shrinkage on decomposed coefficients<br>Make the new image using inverse wavelet transformation
+What is multiresolution decomposition in wavelet transforms?	Multiresolution decomposition breaks down an image into multiple resolution levels using wavelet transforms. At each level, the image is split into four subbands:<br><div>LL₁: Low-frequency approximation</div><div>HL₁: Horizontal details</div><div>LH₁: Vertical details</div><div>HH₁: Diagonal details<br><div>Separates noise (high-frequency) from important structures (low-frequency).</div><div>Enables&nbsp;denoising, compression, and feature extraction&nbsp;by modifying coefficients at different scales.</div></div>
+What are soft and hard thresholding in wavelet shrinkage?	Soft Thresholding: Shrinks&nbsp;all coefficients toward zero&nbsp;by&nbsp;t:&nbsp; <br>&nbsp; \[ T_s^{\text{soft}}(s) = \begin{cases} \text{sgn}(s)(|s| - t), &amp; |s| &gt; t \\ 0, &amp; |s| \leq t \end{cases} \]&nbsp;(best for smooth signals like ECGs)<br><br>Hard Thresholding: Keeps coefficients above \( t \)&nbsp;unchanged:&nbsp; <br>&nbsp; \[ T_s^{\text{hard}}(s) = \begin{cases} s, &amp; |s| &gt; t \\ 0, &amp; |s| \leq t \end{cases} \]&nbsp;(best for sharp edges like MRIs)
+What is the MAE Bayesian Estimator?	The Minimum Absolute Error estimator is a Bayesian method for noise reduction that computes the conditional median of the noise-free signal \( s \) given noisy observations \( d \).&nbsp;<br>\[\hat{s}(d) = \text{median}(P(s|d)) = \frac{\int s \cdot P_{\xi}(d-s)P(s) \, ds}{\int P_{\xi}(d-s)P(s) \, ds}\]
+How is MAE Applied in Wavelet Denoising?	1. Transform: Apply DWT to noisy image → wavelet coefficients \( d = s + \xi \).&nbsp; <br>2. Model: Assume \( s \sim \text{SaS} \) (heavy-tailed) and \( \xi \sim \mathcal{N}(0, \sigma^2) \).&nbsp; <br>3. Estimate: Compute \( \hat{s}(d) \) using the MAE formula.&nbsp;
+What is the MAP Estimator?	The Maximum A Posteriori estimator is a Bayesian method that finds the most probable value of the noise-free signal&nbsp;\(s\)&nbsp;given noisy observations&nbsp;\(d\).&nbsp;&nbsp;<br>Maximises the posterior probability&nbsp;\( P(s|d) \).&nbsp;&nbsp;<br>Balances prior knowledge \( P(s) \) and likelihood \( P(d|s) \).<br>\[\hat{s}_{\text{MAP}} = argmax_{s} P(s|d) = argmax_{s} P(d|s)P(s)\]
+How is MAP Used in Wavelet Denoising?	1. Transform: Apply DWT to noisy image → wavelet coefficients \( d = s + \xi \).&nbsp; <br>2. Model:&nbsp; <br>&nbsp;&nbsp; - Signal \( s \sim \text{SaS} \) (heavy-tailed).&nbsp; <br>&nbsp;&nbsp; - Noise \( \xi \sim \mathcal{N}(0, \sigma^2) \).&nbsp; <br>3. Estimate: Solve for \( \hat{s}_{\text{MAP}} \) by maximizing the posterior.<br>\[\hat{s}_{\text{MAP}} = argmin_{s} \left( -\log P(d|s) - \log P(s) \right)\]&nbsp;
+What is the dot product of two orthogonal vectors?	0
+What is a stochastic process?	A&nbsp;discrete random signal where:<br><ul><li>samples are evenly spaced in time</li><li>samples are continuous in amplitude (infinite precision representation)</li><li>samples are taken at a rate greater than twice the highest frequency component present (Nyquist satisfied)</li><li>sample period is normalised to unity<br></li></ul>
+What is the formula for the correlation coefficient \( \rho \) between two sequences \( u \) and \( v \)?&nbsp;	\( \rho = \frac{1}{N\sigma_u\sigma_v} \sum_{i=0}^{N-1} (u_i - \mu_u)(v_i - \mu_v) \). Normalised by variances to capture structural similarity.&nbsp;&nbsp;
+How does cross-correlation differ from standard correlation?	Cross-correlation includes a shift \( j \): \( \rho = \frac{1}{N\sigma_u\sigma_v} \sum_{i=0}^{N-1} (u_i - \mu_u)(v_{i-j} - \mu_v) \). Maximum value indicates most likely shift.&nbsp;
+What are the purposes of spatial filtering?	Enhance signals (remove noise, smooth, sharpen) and prepare for feature extraction. Filters are also called kernels or masks.&nbsp;&nbsp;
+What is the discrete 1D convolution formula?	\( g(x) = \sum_{m=-s}^{s} f(x - m)h(m) \). Sums over kernel indices \( m \) scaled by filter weights.
+What is the key difference between 2D convolution and correlation?	Convolution flips the kernel: \( g(x, y) = \sum_{m,n} f(x - m, y - n)h(m,n) \). Correlation uses \( f(x + m, y + n)h(m,n) \). Equivalent if kernel is symmetric.&nbsp;&nbsp;
+How is a Gaussian low-pass filter kernel structured?	\( G_\sigma = \frac{1}{2\pi\sigma^2}e^{-\frac{(x^2+y^2)}{2\sigma^2}} \). Example discrete kernel: \( \frac{1}{16} \begin{pmatrix} 1 &amp; 2 &amp; 1 \\ 2 &amp; 4 &amp; 2 \\ 1 &amp; 2 &amp; 1 \end{pmatrix} \).
+What is the gradient magnitude formula for edge detection	\( |\nabla f| = \sqrt{\left( \frac{\partial f}{\partial x} \right)^2 + \left( \frac{\partial f}{\partial y} \right)^2 } \). Represents rate of intensity change.
+What are the Sobel edge detector convolution masks?	For \( \frac{\partial f}{\partial x} \): \( \begin{pmatrix} -1 &amp; 0 &amp; +1 \\ -2 &amp; 0 &amp; +2 \\ -1 &amp; 0 &amp; +1 \end{pmatrix} \). For \( \frac{\partial f}{\partial y} \): \( \begin{pmatrix} +1 &amp; +2 &amp; +1 \\ 0 &amp; 0 &amp; 0 \\ -1 &amp; -2 &amp; -1 \end{pmatrix} \).
+What does the Convolution Theorem state?	Convolution in spatial domain equals multiplication in frequency domain: \( g(x) = f(x) * h(x) \iff G(u) = F(u)H(u) \). Inverse also holds.&nbsp;
+How is edge direction calculated from gradient components?	\( \theta = \tan^{-1}\left( \frac{\partial f}{\partial y}, \frac{\partial f}{\partial x} \right) \). Edge direction is \( \phi = \theta - \frac{\pi}{2} \).&nbsp;
+Why is padding used in 2D convolution?	To maintain the same output size as the input. Prevents reduction in matrix dimensions during filtering.&nbsp;&nbsp;
+What is the normalisation factor in a convolution filter?	Sum of absolute filter weights. Ensures output values remain within a sensible range (e.g. Gaussian kernel sums to 1).
+What is the Mean Square Error (MSE) used for?	Measures estimator quality by combining variance and bias: \( \text{MSE} = \text{var}(\hat{\theta}) + (E(\hat{\theta}) - \theta)^2 \). Minimising MSE balances precision (low variance) and accuracy (low bias).&nbsp; <br>Where&nbsp;\(\hat{\theta}\) = estimator, \(\theta\) = true parameter, \(E(\hat{\theta})\) = estimator’s expected value, \(\text{var}(\hat{\theta})\) = estimator variance.&nbsp;
+What defines the Minimum Variance Unbiased Estimator (MVUE)?	An unbiased estimator (\( E(\hat{\theta}) = \theta \)) with the lowest possible variance. Optimal for unbiased estimation as it minimises uncertainty.&nbsp;
+What does the Cramér-Rao Lower Bound (CRLB) determine?	The theoretical minimum variance achievable by any unbiased estimator. If an estimator meets this bound, it is MVUE.&nbsp; <br>CRLB = \( \frac{1}{I(\theta)} \), where \(I(\theta)\) = Fisher Information.&nbsp;&nbsp;
+How is the CRLB calculated?	Using Fisher Information (\( I(\theta) \)): \( \text{var}(\hat{\theta}) \geq \frac{1}{I(\theta)} \)
+What is Fisher Information?	"A measure of how ""sharp"" the likelihood function is. Higher Fisher Information (steeper curvature) implies lower CRLB and better estimator precision.&nbsp; <br>\( I(\theta) = -E\left[\frac{\partial^2 \ln p(x;\theta)}{\partial \theta^2}\right] \), where&nbsp;\(p(x;\theta)\) = probability density function (PDF) of data, \(E\) = expectation over data."
+When is the sample mean the MVUE for a DC level in WGN?	When \( x[n] = A + w[n] \). Sample mean \( \hat{A} = \frac{1}{N}\sum x[n] \) is unbiased and achieves CRLB \( \sigma^2/N \).&nbsp; <br>Where&nbsp;\(A\) = DC level, \(w[n]\) = white Gaussian noise (WGN), \(N\) = sample size.&nbsp;&nbsp;
+What is the role of bias in MSE?	Bias (\( E(\hat{\theta}) - \theta \)) introduces systematic error. MSE penalises both bias and variance, but MVUE fixes bias to zero.&nbsp; <br>Where&nbsp;\(\hat{\theta}\) = estimator, \(\theta\) = true parameter.
+How does scaling an estimator affect its performance?	Scaling (e.g., \( \hat{A} = a \cdot \text{sample mean} \)) trades bias for variance. Optimal scaling minimises MSE but introduces bias unless&nbsp;\(a=1\).&nbsp;
+What is the BLUE and when is it used?	Best Linear Unbiased Estimator: if the MVUE can't be found because the pdf of the data is not known, then the BLUE is an unbiased linear estimator that can be found with knowledge of the mean and covariance of the pdf.
+Why is the CRLB a benchmark in estimation?	Identifies fundamental performance limits. If an estimator’s variance equals CRLB, no unbiased estimator can outperform it.
+How does Fisher Information link to estimator variance?	Inversely proportional: \( \text{var}(\hat{\theta}) \geq 1/I(\theta) \). Higher Fisher Information → tighter bound → lower achievable variance.&nbsp;
+Define the likelihood function.	\( L(\theta|x) = P(x|\theta) = \prod_{i=1}^N P(x_i|\theta) \). Probability of observed data given parameter \(\theta\).
+How is the MLE derived?	Maximise likelihood function: \(\hat{\theta}_{MLE} = \underset{\theta}{\text{argmax}} \, L(\theta|x)\).
+Steps to compute MLE for differentiable likelihood?	Differentiate log-likelihood, set to zero: \(\frac{\partial}{\partial\theta} \log L(\theta|x) = 0\). Find global maximiser.
+What is the MLE for a DC level in WGN with \(w[n] \sim N(0,\sigma^2)\)?	\(\hat{A} = \frac{1}{N} \sum_{n=0}^{N-1} x[n]\). Sample mean.&nbsp;&nbsp;
+MLE for exponential distribution \(f(x|\theta) = \theta e^{-\theta x}\)?	\(\hat{\theta} = \frac{N}{\sum_{i=1}^N x_i} = \frac{1}{\bar{x}}\). Reciprocal of sample mean.
+Joint MLE for multiple parameters?	Solve \(\frac{\partial}{\partial\theta_j} l(\theta_1, \ldots, \theta_k) = 0\) for \(j = 1, \ldots, k\).
+Why is MLE advantageous?	Works when MVUE unavailable; asymptotically efficient; numerical methods applicable.
+What ensures MLE consistency?	As \(N \to \infty\), \(\frac{1}{N} \sum x^2[n] \to E(x^2[n])\), leading to \(E(\hat{A}) \to A\).
+What does the Least Square Estimator (LSE) minimise?	Sum of squares between measurements and model \(J=\sum_{n=0}^{N-1}(x[n]-f(\theta_{1},\theta_{2},...,\theta_{M}))^{2}\)
+When does LSE coincide with the Maximum Likelihood Estimator (MLE)?	When noise \(w[n]\) is Gaussian \(w[n]\sim N(0,\sigma^{2})\)
+What is the core principle of the Method of Moments (MoM)?	Equate sample moments with population moments implied by model
+What is are the advantages and disadvantages of MoM?	Extremely easy to determine and implement intuitive approach. Estimators not always have good properties especially for small sample sizes.
+How does the Bayesian approach treat unknown parameters?	Assumes parameter is a random variable. Classical approach assumes deterministic constant
+What advantage does Bayesian estimation offer regarding prior knowledge?	Enables incorporating prior information about parameters. Classical methods cannot
+State Bayes' rule for posterior probability.	\(p(\theta|x)=\frac{p(x|\theta)p(\theta)}{p(x)}\)&nbsp;<br>Posterior is proportional to likelihood times prior
+What does the Bayesian MSE minimise?	\(Bmse(\hat{A})=\iint(A-\hat{A})^{2}p(x,A)dxdA\)&nbsp;<br>Average over joint distribution integrates out parameter dependence
+How is the Minimum Mean Square Error (MMSE) estimator calculated?	Mean of the posterior PDF \(\hat{\theta}_{MMSE} = E[\theta|x] = \int \theta p(\theta|x) d\theta\)
+What cost function does the MMSE estimator minimise?	Quadratic error cost function \(C(\epsilon) = \epsilon^2\)
+What cost function does the MAE estimator minimise?	Absolute error cost function \(C(\epsilon) = |\epsilon|\)
+How is the Maximum a Posteriori (MAP) estimator calculated?	Mode of the posterior PDF \(\hat{\theta}_{MAP} = \underset{\theta}{argmax} \, p(\theta|x)\)
+Give the practical calculation formula for the MAP estimator.	\(\hat{\theta}_{MAP} = \underset{\theta}{argmax} \, [p(x|\theta)p(\theta)]\) or \(\underset{\theta}{argmax} \, [\ln p(x|\theta) + \ln p(\theta)]\)&nbsp;Maximises likelihood times prior
+What is the MAP estimator formula for an exponential likelihood (\(p(x|\theta)=\theta e^{-\theta x}\)) and exponential prior (\(p(\theta)=\lambda e^{-\lambda\theta}\))?	\(\hat{\theta}_{MAP} = \frac{1}{x+\lambda}\)
+What is the MAP estimator formula for a Gaussian likelihood (\(p(x|\theta) \propto exp(-\frac{(x-\theta)^2}{2\sigma_n^2})\)) and Gaussian prior (\(p(\theta) \propto exp(-\frac{\theta^2}{2\sigma^2})\))?	\(\hat{\theta}_{MAP} = \frac{\sigma^{2}}{\sigma^{2}+\sigma_{n}^{2}} x\)
+What is the MAP estimator formula for a Gaussian likelihood (\(p(x|\theta) \propto exp(-\frac{(x-\theta)^2}{2\sigma_n^2})\)) and Laplace prior (\(p(\theta) \propto exp(-\frac{\sqrt{2}|\theta|}{\sigma})\))?	\(\hat{\theta}_{MAP} = sign(x)(|x|-\sqrt{2}\frac{\sigma_{n}^{2}}{\sigma})_{+}\).<br>Notation \((g)_{+}\) means \(max(g, 0)\)
+What operation does the MAP estimator with a Laplace prior perform?	Soft thresholding
+Define a feature vector in classification.&nbsp;	\( x = [x_1, x_2, ..., x_l]^T \), where \( x_i \) are measurable features of a pattern&nbsp;&nbsp;
+What is Bayes' rule and what does it calculate in classification?	\[ P(\omega_i|x) = \frac{P(x|\omega_i)P(\omega_i)}{P(x)} \]&nbsp; <br>It calculates the posterior probability of class \(\omega_i\) given feature vector \(x\)
+State the Bayesian classification rule for two classes.	Classify \(x\) to \(\omega_1\) if \( P(x|\omega_1)P(\omega_1) &gt; P(x|\omega_2)P(\omega_2) \). If priors equal, pick the higher likelihood.&nbsp;&nbsp;
+How is the classification error probability \(P_e\) calculated for two classes?	\[ P_e = \int_{R_2} P(x|\omega_1)P(\omega_1)dx + \int_{R_1} P(x|\omega_2)P(\omega_2)dx \]&nbsp;&nbsp;
+What threshold \(x_0\) minimises error for two Gaussians with \(\mu_1=0\), \(\mu_2=1\), equal variances?	Solve \( \exp(-x^2) = \exp(-(x-1)^2) \). Solution: \( x_0 = \frac{1}{2} \).
+What does minimising the average risk mean in classification?&nbsp;	Accounts for unequal costs of errors via a loss matrix (\(\lambda_{ij}\)).&nbsp;<br>Adjusts decision thresholds to reduce costly errors (e.g. missing cancer diagnosis).
+What is the loss matrix \(L\) in risk minimisation?	Matrix where \(\lambda_{ij}\) = cost of classifying \(\omega_i\) as \(\omega_j\).&nbsp;<br>Example: \( L = \begin{bmatrix}0 &amp; 0.5\\1.0 &amp; 0\end{bmatrix} \) penalises \(\omega_2 \rightarrow \omega_1\) errors heavily.
+How does the loss matrix shift decision thresholds?	Higher \(\lambda_{21}\) (cost of \(\omega_2 \rightarrow \omega_1\)) moves threshold left. Makes classifier stricter for \(\omega_1\) to avoid costly false positives.
+What is the risk formula for two classes?	\[ r = \lambda_{12}P(\omega_1)\int_{R_2} P(x|\omega_1)dx + \lambda_{21}P(\omega_2)\int_{R_1} P(x|\omega_2)dx \]&nbsp; <br>Sums weighted error probabilities
+How is the likelihood ratio test modified for risk?	Classify to \(\omega_1\) if:&nbsp; <br>\[ \frac{P(x|\omega_1)}{P(x|\omega_2)} &gt; \frac{P(\omega_2)(\lambda_{21} - \lambda_{22})}{P(\omega_1)(\lambda_{12} - \lambda_{11})} \]&nbsp; <br>Incorporates loss matrix and priors into threshold
+Why use average risk instead of error probability?	Critical in applications where some errors are more harmful (e.g. medical diagnosis, fraud detection). Balances precision/recall based on real-world costs.
+What is the Neyman-Pearson criterion?&nbsp;	The Neyman-Pearson criterion is an alternative decision rule used in classification problems. Unlike methods that aim to minimise the overall error probability or the average risk, the Neyman-Pearson criterion focuses on constraining the error rate for one specific class to a fixed, chosen value.
+What is the evidence \(P(x)\) in Bayes' rule?&nbsp;	Normalisation term: \( P(x) = \sum_{i=1}^M P(x|\omega_i)P(\omega_i) \).&nbsp;Ensures posteriors sum to 1.
+What loss function is used in regression (curve fitting)?&nbsp;	Sum of squared errors \( \mathcal{L} = \sum_i \Bigl(\hat{y}(x_i) - y_i\Bigr)^2 \). Measures prediction deviation.
+Specify the best constant predictor and its optimal value.	\( \hat{y}_{\text{const}}(x)=w_1 \) with \( w_1 = \frac{1}{N}\sum_{i=1}^N y_i \). Represents mean target value.
+Define the best slope predictor and its corresponding coefficient.	\( \hat{y}_{\text{slope}}(x)=w_2 x \) with \( w_2 = \frac{\sum x_i y_i}{\sum x_i^2} \)
+Express the best straight-line predictor and its parameter derivation.	\( \hat{y}(x)=w_1 + w_2 x \) where \( w_2 = \frac{\sum x_i y_i - N\bar{x}\bar{y}}{\sum x_i^2 - N\bar{x}^2} \) and \( w_1 = \bar{y} - w_2 \bar{x} \).
+What is the closed-form solution for the weight vector in multivariable regression?&nbsp;	\( \mathbf{w}^* = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T \mathbf{y} \)
+Why is regularisation sometimes employed in regression?&nbsp;	Prevents overfitting by penalising large weights. Improves generalisation outside training data.
+What is the regularised loss function in linear regression?	\( \mathcal{L} = \sum_{i=1}^N \Bigl(y_i - \mathbf{x}_i^T\mathbf{w}\Bigr)^2 + \lambda\sum_{j=1}^D w_j^2 \)
+Provide the closed-form solution for regularised regression.	\( \mathbf{w}^* = (\mathbf{X}^T\mathbf{X} + \lambda \mathbf{I})^{-1}\mathbf{X}^T\mathbf{y} \)
+How are nonlinear features incorporated into the regression model?	Transform input via functions \( f_i(x) \); e.g. feature vector \( [1, x, x^2] \). Maps nonlinearity to linear form.
+How to identify an even function?&nbsp;	Satisfies \(f(x)=f(-x)\). Exhibits y–axis symmetry.
+How to identify an odd function?	Satisfies \(f(x)=-f(-x)\). Displays origin symmetry.
+What is the general form of the Fourier series expansion?	\(f(x)=a_0+\sum_{n=1}^{\infty}\left(a_n\cos\frac{2\pi nx}{T}+b_n\sin\frac{2\pi nx}{T}\right)\)
+How are the Fourier coefficients defined?	\(a_n=\frac{2}{T}\int_{-T/2}^{T/2}f(x)\cos\frac{2\pi nx}{T}\,dx\)<br><br>\(b_n=\frac{2}{T}\int_{-T/2}^{T/2}f(x)\sin\frac{2\pi nx}{T}\,dx\).
+What special properties apply to the Fourier series of a square wave?&nbsp;	Only odd harmonic sine terms; integrals of odd functions over symmetric intervals vanish.&nbsp;\(b_n\)&nbsp;are nonzero for \(n=1,3,5,\dots\).
+What is the importance of Fourier space coefficients?	They encapsulate complete information. Significant only within a finite range. Useful for efficient signal analysis.
+Define the 1D continuous Fourier Transform pair.	Forward: \( F(u) = \int_{-\infty}^{\infty} f(x) e^{-j2\pi ux} dx \)&nbsp;.&nbsp;<br>Inverse: \( f(x) = \int_{-\infty}^{\infty} F(u) e^{j2\pi ux} du \).
+How is the discrete Fourier Transform (DFT) calculated?	\( F(u) = \frac{1}{N} \sum_{x=0}^{N-1} f(x) e^{-\frac{j2\pi ux}{N}} \) for \( u=0,1,...,N-1 \)
+How is Fourier magnitude spectrum calculated?	\( |F(u)| = \sqrt{R^2(u) + I^2(u)} \) where \( R \) = real part, \( I \) = imaginary part.
+How does FT help in noise removal?	Transform → zero noisy frequencies → inverse transform. Preserves dominant signal components.
+What is the DC component in Fourier analysis?	\( F(0) = \int_{-\infty}^{\infty} f(x) dx \). Represents average signal value (zero-frequency term).
+How does FT compression work?	Keep dominant \( F(u) \) coefficients, discard small ones. Achieves data reduction (e.g., MP3).
+Define a feature vector and feature space	Feature vector: \( \mathbf{x} = \begin{bmatrix} x_1 \\ \vdots \\ x_d \end{bmatrix} \). Feature space: \( d \)-dimensional space where each point represents a data instance.
+What defines a good feature vector?	Linearly separable, low correlation between features, unimodal distributions
+What is a unimodal distribution?	A distribution with a single peak/mode. Most data clusters around one central value. Contrasts with bimodal/multimodal distributions.
+Explain the curse of dimensionality	Adding features exponentially increases the amount of data needed.
+What is the difference between feature selection and extraction?	Selection: choose subset of original features. Extraction: transform features to new lower-dimensional space (e.g., PCA)&nbsp;
+What formula calculates the number of feature subsets in exhaustive selection?	\( \frac{N!}{(N - d)!d!} \)&nbsp;or combinations
+Describe forward stepwise feature selection	Start with empty set. Iteratively add best remaining feature by testing the set with each remaining candidate.
+Describe backward stepwise feature selection&nbsp;&nbsp;	Start with all features. Iteratively remove least significant feature until an optimal subset is reached.
+What is the mathematical goal of PCA?	Reduce the number of features whilst preserving maximal data variance by using the eigenvectors of covariance matrix.
+What is the t-score formula for binary classification feature importance?	\( t\text{-score}(f_i) = \frac{\mu_1 - \mu_2}{\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}} \). Higher score → better class separation&nbsp;
+What are the steps for performing PCA?	1. Center data: Subtract mean from each feature.&nbsp; <br>2. Compute covariance matrix: \( \mathbf{C} = \frac{1}{n} \mathbf{X}^T \mathbf{X} \).&nbsp;&nbsp; <br>3. Find eigenvectors \(\mathbf{v}\) and eigenvalues \(\lambda\) of \(\mathbf{C}\).&nbsp;&nbsp;&nbsp; <br>4. Sort eigenvectors by descending \(\lambda\) (principal components).&nbsp;&nbsp; <br>5. Project data onto top \(d\) eigenvectors: \( \mathbf{X}_{\text{PCA}} = \mathbf{X} \mathbf{V}_d \).&nbsp;&nbsp;
+What is the goal of PCA?	Reduce dimensionality by transforming correlated variables into uncorrelated ones (principal components) retaining max variance
+How is percentage of variance explained calculated?	\[\frac{\sum_{i=1}^d \lambda_i}{\sum_{i=1}^p \lambda_i}\] (sum of selected eigenvalues / total eigenvalues)&nbsp; <br>
+What is an eigenface?&nbsp;	Eigenvector of face image covariance matrix; represents dominant patterns in face dataset
+Steps to compute eigenfaces	1) Compute mean face 2) Subtract mean 3) Calculate covariance matrix 4) Find eigenvectors (eigenfaces)
+Key limitation of PCA&nbsp;	Only captures linear relationships; fails for non-linear data structures
+What does diagonalised covariance matrix after PCA indicate?	Data is decorrelated
+Purpose of zero-meaning data in PCA	Centres data around origin; ensures first principal component reflects direction of max variance, not mean&nbsp;
+What structure does a Toeplitz matrix have?	"Constant diagonals<br>eg.<br>\[\begin{bmatrix}
+1 &amp; 2 &amp; 3 \\
+4 &amp; 1 &amp; 2 \\
+5 &amp; 4 &amp; 1 \\
+\end{bmatrix}\]"
+What does the \( \mathbf{^H} \) operator denote for a matrix?&nbsp;	Hermitian transpose: transpose matrix and take complex conjugate of each element.&nbsp;If \( \mathbf{A} = \begin{bmatrix} 1+i &amp; 2 \\ 3 &amp; 4-i \end{bmatrix} \), then \( \mathbf{A^H} = \begin{bmatrix} 1-i &amp; 3 \\ 2 &amp; 4+i \end{bmatrix} \).
